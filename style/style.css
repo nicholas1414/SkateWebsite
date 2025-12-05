@@ -1,0 +1,19 @@
+body {
+            font-family: 'Science Gothic', sans-serif;
+        }
+
+body {
+        font-family: 'Science Gothic', sans-serif;
+    
+
+    /* Apply Science Gothic to navbar elements */
+    .navbar, 
+    .navbar-brand, 
+    .nav-link, 
+    .btn {
+        font-family: 'Science Gothic', sans-serif;
+    }
+    }
+
+
+    
