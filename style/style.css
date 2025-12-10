@@ -1,19 +1,120 @@
 body {
-            font-family: 'Science Gothic', sans-serif;
-        }
+font-family: 'Science Gothic', sans-serif;
+}
 
 body {
-        font-family: 'Science Gothic', sans-serif;
-    
-
-    /* Apply Science Gothic to navbar elements */
-    .navbar, 
-    .navbar-brand, 
-    .nav-link, 
-    .btn {
-        font-family: 'Science Gothic', sans-serif;
-    }
-    }
+font-family: 'Science Gothic', sans-serif;
+/* Apply Science Gothic to navbar elements */
+.navbar, 
+.navbar-brand, 
+.nav-link, 
+.btn {
+font-family: 'Science Gothic', sans-serif;
+}
+}
 
 
-    
+    /* Show dropdown on hover for desktop screens */
+/* Enable hover dropdown for desktop */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Prevent Bootstrap click delay */
+.dropdown-menu {
+  margin-top: 0;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  background: #000000;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: 'Science Gothic', sans-serif;
+}
+
+.announcement-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 18s linear infinite;
+}
+
+.announcement-track span {
+  display: inline-block;
+  padding: 8px 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
+}
+
+/* Hero Image Link */
+.hero-link {
+  display: block;
+  text-decoration: none;
+}
+
+.hero-image {
+  width: 100%;
+  height: 420px;
+  background-image: url("../style/Scooter.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  position: relative;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+
+
+/* Dark overlay */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Hover Effect */
+.hero-link:hover .hero-image {
+  filter: brightness(1.15);
+  transform: scale(1.01);
+}
+
+/* Centered Text */
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Science Gothic', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  z-index: 2;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 260px;
+  }
+
+  .hero-text {
+    font-size: 2rem;
+  }
+}
