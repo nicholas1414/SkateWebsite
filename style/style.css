@@ -1,16 +1,12 @@
 body {
-font-family: 'Science Gothic', sans-serif;
+  font-family: 'Science Gothic', sans-serif;
 }
 
-body {
-font-family: 'Science Gothic', sans-serif;
-/* Apply Science Gothic to navbar elements */
-.navbar, 
-.navbar-brand, 
-.nav-link, 
+.navbar,
+.navbar-brand,
+.nav-link,
 .btn {
-font-family: 'Science Gothic', sans-serif;
-}
+  font-family: 'Science Gothic', sans-serif;
 }
 
 
@@ -22,13 +18,46 @@ font-family: 'Science Gothic', sans-serif;
   }
 }
 
+    /* Show dropdown on hover for small screens (touch devices with pointer/mouse)
+       and when the collapsed navbar is open. This makes "Store" pop up on hover
+       for smaller viewports. */
+    @media (max-width: 991.98px) {
+      /* Hide dropdown by default on small screens; open only on hovering the parent */
+        /* Strongly hide dropdowns by default on small screens (override Bootstrap's .show)
+           and ensure they only open when hovering the parent or the toggle anchor. */
+        .navbar .dropdown .dropdown-menu,
+        .navbar .collapse .dropdown .dropdown-menu {
+          display: none !important;
+          position: relative;
+          float: none;
+          margin: 0;
+          border: none;
+          box-shadow: none;
+        }
+
+        .navbar .dropdown:hover > .dropdown-menu,
+        .navbar .collapse .dropdown:hover > .dropdown-menu,
+        .navbar .nav-link.dropdown-toggle:hover + .dropdown-menu,
+        .navbar .collapse .nav-link.dropdown-toggle:hover + .dropdown-menu {
+          display: inline-block !important;
+          position: relative;
+        }
+
+      /* Also open when hovering the toggle link itself (covers anchor hover) */
+      .navbar .nav-link.dropdown-toggle:hover + .dropdown-menu,
+      .navbar .nav-link.dropdown-toggle:focus + .dropdown-menu {
+        display: inline-block;
+        position: relative;
+      }
+    }
+
 /* Prevent Bootstrap click delay */
 .dropdown-menu {
   margin-top: 0;
 }
 
 /* Announcement Bar */
-.announcement-bar {
+  .announcement-bar {
   background: #000000;
   color: white;
   overflow: hidden;
@@ -101,7 +130,6 @@ font-family: 'Science Gothic', sans-serif;
   align-items: center;
   justify-content: center;
   color: white;
-  font-family: 'Science Gothic', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -116,5 +144,64 @@ font-family: 'Science Gothic', sans-serif;
 
   .hero-text {
     font-size: 2rem;
+  }
+}
+
+/* Footer uses Inter for a cleaner look */
+.site-footer {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Make collapsed navbar overlay content on small screens so it doesn't push
+   the page down when opened. */
+@media (max-width: 991.98px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .collapse.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1050;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+    .navbar .dropdown .dropdown-menu {
+      position: relative;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      padding: 0.25rem 0.5rem; /* small horizontal padding so menu is slightly wider */
+      display: inline-block;
+      min-width: -webkit-max-content;
+      min-width: -moz-max-content;
+      min-width: max-content;
+      margin-left: 0.25rem;
+    }
+
+  /* Dropdown items: dark text on white background for small screens */
+  .navbar .dropdown .dropdown-menu .dropdown-item {
+    color: #111;
+    padding: 0.45rem 0.6rem; /* slightly reduced horizontal padding */
+    white-space: nowrap;
+  }
+
+  .navbar .dropdown .dropdown-menu .dropdown-item:hover,
+  .navbar .dropdown .dropdown-menu .dropdown-item:focus {
+    background-color: #f8f9fa;
+    color: #000;
   }
 }
