@@ -97,7 +97,6 @@ body {
 .hero-image {
   width: 100%;
   height: 420px;
-  background-image: url("../style/Scooter.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 16px;
@@ -205,3 +204,69 @@ body {
     color: #000;
   }
 }
+
+/* About page improvements */
+.about-hero {
+  background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(10,10,10,0.96));
+  background-size: cover;
+  text-align: left;
+}
+.about-hero .display-4 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  .about-hero .display-4 { font-size: 3.6rem; }
+}
+
+/* Section spacing and typography */
+h1, h2, h3, h4 {
+  letter-spacing: 0.6px;
+}
+section { padding-top: 12px; padding-bottom: 12px; }
+
+.card-patent { border: 1px solid rgba(0,0,0,0.06); background: #fff; }
+
+.cta-section { background: #f8f9fa; border-radius: 8px; }
+.newsletter-input { max-width: 420px; }
+
+/* Small interactions */
+.btn { transition: transform 0.14s ease, box-shadow 0.14s ease; }
+.btn:hover { transform: translateY(-2px); }
+
+/* Subtle reveal animation */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+.container > section, .card-patent { animation: fadeUp 420ms ease both; }
+
+/* Improve footer newsletter prominence */
+.site-footer .form-control { max-width: 420px; }
+
+/* Team grid styles */
+.team-grid { margin-top: 1rem; }
+.team-card { border: none; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border-radius: 10px; }
+.team-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
+.team-card h5 { margin-top: 0.5rem; margin-bottom: 0.25rem; }
+.team-card p.small { margin-bottom: 0; }
+
+@media (max-width: 576px) {
+  .team-photo { height: 160px; }
+}
+
+/* Team hero (page title) — prominent */
+.team-hero {
+  background: linear-gradient(90deg, rgba(17,17,17,0.98), rgba(28,28,28,0.98));
+  padding: 2rem 1.25rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.team-hero .display-4 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.team-hero .lead { color: rgba(255,255,255,0.9); font-size: 1.125rem; }
+
+/* De-emphasize the PRO team section so the main hero stands out more */
+.pro-team h2 { font-size: 1.1rem; color: #222; font-weight: 700; }
+.pro-team p { color: #555; }
+.pro-team .team-card { background: linear-gradient(180deg,#ffffff,#fbfbfb); }
+
